@@ -111,6 +111,33 @@ String can be declared with single or double quotes. The rule of thumb is to be 
 
 When JavaScript variables are declared, they have an initial value of undefined. If you do a mathematical operation on an undefined variable your result will be NaN which means "Not a Number". If you concatenate a string with an undefined variable, you will get a string of undefined.
 
+## Functions
+
+### Chaining Functions
+
+#### Optional chaining (?.)
+
+Optional chaining is a syntax that allows you to access properties of an object without worrying if that object or its property is null or undefined. It helps prevent errors caused by trying to access properties of non-existent objects.
+
+How it works:
+- Syntax: object?.property
+- Meaning: If object is null or undefined, the expression returns undefined. If object exists, it then tries to access the property. If property is also null or undefined, the expression returns undefined.
+
+```javaScript
+const user = {
+  name: "Alice",
+  address: {
+    street: "123 Main St"
+  }
+};
+
+// Without optional chaining:
+const streetName = user.address.street; // If `user` or `user.address` is null/undefined, it throws an error
+
+// With optional chaining:
+const streetName = user?.address?.street; // Returns "123 Main St" if user and address exist, otherwise returns undefined
+```
+
 
 
 
