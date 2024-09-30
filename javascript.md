@@ -137,6 +137,89 @@ const streetName = user.address.street; // If `user` or `user.address` is null/u
 // With optional chaining:
 const streetName = user?.address?.street; // Returns "123 Main St" if user and address exist, otherwise returns undefined
 ```
+## JavaScript Algorithms and Data Structures
+
+### Bubble Sort
+
+- Purpose: Sorts an array of elements by repeatedly comparing adjacent pairs and swapping them if they are in the wrong order.
+- Time complexity: O(n^2) in the worst and average cases, making it inefficient for large datasets.
+- Space complexity: O(1) as it operates in-place without requiring additional memory.
+
+```javaScript
+function bubbleSort(array) {
+  const length = array.length;
+
+  for (let i = 0; i < length - 1; i++) {
+    for (let j = 0; j < length - i - 1; j++) {
+      if (array[j] > array[j + 1]) {
+        // Swap elements if they are in the wrong order
+        const temp = array[j];
+        array[j] = array[j + 1];
+        array[j + 1] = temp;
+      }
+    }
+  }
+
+  return array;
+}
+```
+
+### Selection Sort
+
+- Purpose: Sorts an array of elements by repeatedly finding the minimum element in the unsorted portion of the array and swapping it with the first element.
+- Time complexity: O(n^2) in the worst, average, and best cases, making it inefficient for large datasets.
+- Space complexity: O(1) as it operates in-place without requiring additional memory.
+
+```javascript
+function selectionSort(array) {
+  const length = array.length;
+
+  for (let i = 0; i < length - 1; i++) {
+    let minIndex = i;
+
+    for (let j = i + 1; j < length; j++) {
+      if (array[j] < array[minIndex]) {
+        minIndex = j;
+      }
+    }
+
+    // Swap the minimum element with the first element of the unsorted portion
+    const temp = array[i];
+    array[i] = array[minIndex];
+    array[minIndex] = temp;
+  }
+
+  return array;
+}
+```
+
+### Insertion Sort
+
+- Purpose: Sorts an array of elements by repeatedly inserting an element into its correct position in the sorted portion of the array.
+- Time complexity: O(n^2) in the worst case, O(n) in the best case (when the array is already sorted), and O(n^2) on average.
+- Space complexity: O(1) as it operates in-place without requiring additional memory.
+
+```javascript
+function insertionSort(array) {
+const length = array.length;
+
+for (let i = 1; i < length; i++) {
+const key = array[i]; // Element to be inserted
+let j = i - 1;
+
+while (j >= 0 && array[j] > key) {
+  array[j + 1] = array[j]; // Shift elements to the right
+  j--;
+}
+
+array[j + 1] = key; // Insert the element in its correct position
+}
+
+return array;
+}
+```
+
+
 
 
 
