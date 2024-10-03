@@ -1,5 +1,14 @@
 # All JS Concepts 
 
+## Menu
+
+- [Comments](#comments)
+- [Variables](#variables)
+- [Arrays](#arrays)
+- [Objects](#objects)
+- [Functions](#functions)
+- [Js Common Conventions](#JsCommonConventions) 
+
 ## Comments
 
 ### Inline Comments
@@ -354,6 +363,38 @@ ourArray.shift();
 ourArray.unshift("Happy"); // ["Happy", "Stimpson", "J", "cat"]
 ```
 
+## Objects
+
+### Set Objects
+
+A set constructor is a built-in function used to create new Set objects. Sets are collections of unique values, meaning no duplicate elements are allowed. The set constructor takes an iterable object (like an array) as an argument and initializes the set with its elements.
+
+Parameters:
+
+- iterable: An optional iterable object (e.g., array, string, map, set) whose elements will be added to the new set. If omitted, an empty set is created.
+
+```javascript
+new Set(iterable);
+
+//example Creating an exmpty set.
+const emptySet = new Set();
+console.log(emptySet); // Output: Set {}
+
+//Creating a set from an array
+const numbers = new Set([1, 2, 3, 2, 4]);
+console.log(numbers); // Output: Set { 1, 2, 3, 4 }
+
+//Creating a set from a string
+const letters = new Set("hello");
+console.log(letters); // Output: Set { 'h', 'e', 'l', 'o' }
+```
+
+Key points:
+
+- Sets are unordered collections, meaning the elements don't have a specific order.
+- Sets are iterable, allowing you to loop over their elements using a for...of loop.
+- Sets have various methods for adding, removing, checking, and iterating over elements.
+
 ## Functions
 
 Write Reusable JavaScript with Functions
@@ -486,8 +527,41 @@ return array;
 }
 ```
 
+## <a id="JsCommonConventions">Js Common Conventions</a>
 
+### Naming Conventions
 
+- Variables:
+  - Use camelCase for variable names.
+  - Use meaningful names that reflect their purpose.
+- Functions:
+  - Use camelCase for function names.
+  - Use verbs or verb phrases that describe the function's action.
+- Constants:
+  - Use uppercase with underscores (e.g., MY_CONSTANT) for constants.
+- Classes:
+  - Use PascalCase for class names.
 
+### Function Parameters
+
+- Prefix an unused parameter with an underscore _. You couls also leave the parameter empty like so: (, char1).
+
+### Code Formatting
+
+- Indentation: Use consistent indentation (usually 2 or 4 spaces) to improve code readability.
+- Line Length: Limit line length to around 80 characters to prevent horizontal scrolling.
+- Whitespace: Use whitespace appropriately to separate logical blocks of code.
+- Braces: Place opening braces on the same line as the declaration and closing braces on a new line.
+
+### Best Practices
+- Use strict mode: Enables stricter rules and helps catch potential errors.
+- Avoid global variables: Use modules or closures to encapsulate variables.
+- Write clear and concise code: Use meaningful variable names, comments, and formatting.
+- Test your code: Write unit tests to ensure code quality and prevent regressions.
+- Use linters and code formatters: Tools like ESLint and Prettier can help enforce coding standards.
+
+### Popular Style Guides
+- Airbnb JavaScript Style Guide: A popular style guide with comprehensive rules for JavaScript.
+- [Google JavaScript Style Guide](https://google.github.io/styleguide/jsguide.html): Another well-known style guide with a focus on readability and maintainability.
 
 
